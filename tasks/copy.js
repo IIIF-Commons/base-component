@@ -4,6 +4,5 @@ var gulp = require('gulp');
 var utils = require('gulp-utils');
 
 gulp.task('copy:typings', function() {
-    return gulp.src([
-    ]).pipe(gulp.dest('./typings'));
+    return gulp.src(config.typings).pipe(gulp.dest('./typings'));
 });

@@ -3,6 +3,9 @@ var metadata = require('./package');
 var GulpConfig = (function () {
     function GulpConfig() {
         this.name = metadata.name;
+        this.deps = [];
+        this.testDeps = [];
+        this.typings = [];
         this.dist = './dist';
         this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
         this.jsOut = this.name + '.js';
