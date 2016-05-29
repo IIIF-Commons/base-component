@@ -41,6 +41,11 @@ var Components;
         });
     }
 })(Components || (Components = {}));
+module.exports = (function (w) {
+    if (!w.Components) {
+        w.Components = Components;
+    }
+})(window);
 
 var Components;
 (function (Components) {
