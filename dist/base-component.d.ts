@@ -39,11 +39,6 @@ declare namespace Components {
 }
 
 declare namespace Components {
-    class Events {
-    }
-}
-
-declare namespace Components {
     interface IBaseComponent {
     }
 }

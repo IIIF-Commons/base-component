@@ -770,16 +770,6 @@ var Components;
     }
 })(window);
 
-var Components;
-(function (Components) {
-    var Events = (function () {
-        function Events() {
-        }
-        return Events;
-    }());
-    Components.Events = Events;
-})(Components || (Components = {}));
-
 
 
 
