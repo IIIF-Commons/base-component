@@ -11,6 +11,7 @@ declare namespace Components {
         protected emitEvent(event: string, ...args: any[]): void;
         protected _resize(): void;
     }
+    function applyMixins(derivedCtor: any, baseCtors: any[]): void;
 }
 
 declare namespace Components {

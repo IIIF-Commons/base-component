@@ -35,19 +35,19 @@ namespace Components {
             
         }
     }
-    
-    applyMixins(BaseComponent, [EventEmitter2]);
-    
-    function applyMixins(derivedCtor: any, baseCtors: any[]) {
+
+    export function applyMixins(derivedCtor: any, baseCtors: any[]) {
         baseCtors.forEach(baseCtor => {
             Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
                 derivedCtor.prototype[name] = baseCtor.prototype[name];
             });
         });
     }
+    
+    applyMixins(BaseComponent, [EventEmitter2]);
 }
 
-module.exports = (function(w) {
+(function(w) {
     if (!w.Components){
         w.Components = Components;
     }

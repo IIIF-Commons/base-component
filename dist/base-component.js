@@ -32,7 +32,6 @@ var Components;
         return BaseComponent;
     }());
     Components.BaseComponent = BaseComponent;
-    applyMixins(BaseComponent, [EventEmitter2]);
     function applyMixins(derivedCtor, baseCtors) {
         baseCtors.forEach(function (baseCtor) {
             Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
@@ -40,8 +39,10 @@ var Components;
             });
         });
     }
+    Components.applyMixins = applyMixins;
+    applyMixins(BaseComponent, [EventEmitter2]);
 })(Components || (Components = {}));
-module.exports = (function (w) {
+(function (w) {
     if (!w.Components) {
         w.Components = Components;
     }
