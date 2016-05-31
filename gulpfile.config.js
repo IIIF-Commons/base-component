@@ -1,11 +1,15 @@
 var metadata = require('./package');
+var path = require('path');
 
 var GulpConfig = (function () {
     function GulpConfig() {
         this.name = metadata.name;
-        this.deps = [];
+        this.deps = ['node_modules/eventemitter2/lib/eventemitter2.js'];
+        this.concatDeps = this.deps;
         this.testDeps = [];
         this.typings = [];
+        this.typingsDir = './typings';
+        this.concatTypings = [path.join(this.typingsDir, '/eventemitter2.d.ts')];
         this.dist = './dist';
         this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
         this.jsOut = this.name + '.js';
