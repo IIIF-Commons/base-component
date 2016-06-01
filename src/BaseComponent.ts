@@ -27,7 +27,7 @@ namespace Components {
             return <IBaseComponentOptions>{};
         }
         
-        protected emitEvent(event: string, ...args: any[]): void {
+        protected _emit(event: string, ...args: any[]): void {
             (<any>this).emit(event, args);
         }
         

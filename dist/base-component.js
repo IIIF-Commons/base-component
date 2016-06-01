@@ -742,7 +742,7 @@ var Components;
         BaseComponent.prototype._getDefaultOptions = function () {
             return {};
         };
-        BaseComponent.prototype.emitEvent = function (event) {
+        BaseComponent.prototype._emit = function (event) {
             var args = [];
             for (var _i = 1; _i < arguments.length; _i++) {
                 args[_i - 1] = arguments[_i];
