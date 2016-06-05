@@ -13,7 +13,10 @@ var GulpConfig = (function () {
         this.dist = './dist';
         this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
         this.jsOut = this.name + '.js';
+        this.jsMinOut = this.name + '.min.js';
+        this.jsBundleOut = this.jsOut;
         this.dtsOut = this.name + '.d.ts';
+        this.dtsBundleOut = this.dtsOut;
         this.tsSrc = [
             'src/_references.ts',
             'src/*.ts',
