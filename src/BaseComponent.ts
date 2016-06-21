@@ -34,6 +34,10 @@ namespace Components {
         protected _resize(): void {
             
         }
+
+        public databind(data: any): void {
+            
+        }
     }
 
     export function applyMixins(derivedCtor: any, baseCtors: any[]) {
