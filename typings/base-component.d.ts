@@ -22,3 +22,7 @@ interface IEventEmitter2 {
     listenersAny(): Function[];
     emit(event: string, ...args: any[]);
 }
+
+interface Window {
+    Components: any;
+}

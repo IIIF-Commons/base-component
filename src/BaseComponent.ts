@@ -1,4 +1,5 @@
 declare var EventEmitter2: IEventEmitter2;
+declare var define: any;
 
 namespace Components {
     export class BaseComponent implements IBaseComponent {
@@ -51,8 +52,11 @@ namespace Components {
     applyMixins(BaseComponent, [EventEmitter2]);
 }
 
-(function(w) {
-    if (!w.Components){
-        w.Components = Components;
-    }
-})(window);
+if ( typeof module === "object" && module && typeof module.exports === "object" ) {
+	module.exports = Components;
+} else {
+	window.Components = Components;
+	if ( typeof define === "function" && define.amd ) {
+		define( "Components", [], function () { return Components; } );
+	}
+}
