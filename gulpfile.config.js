@@ -4,7 +4,9 @@ var path = require('path');
 var GulpConfig = (function () {
     function GulpConfig() {
         this.name = metadata.name;
-        this.deps = ['node_modules/eventemitter2/lib/eventemitter2.js'];
+        this.deps = [
+            'node_modules/eventemitter2/lib/eventemitter2.js'
+        ];
         this.concatDeps = this.deps;
         this.testDeps = [];
         this.typings = [];
@@ -14,7 +16,7 @@ var GulpConfig = (function () {
         this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
         this.jsOut = this.name + '.js';
         this.jsMinOut = this.name + '.min.js';
-        this.jsBundleOut = this.jsOut;
+        this.jsBundleOut = this.name + '.bundle.js';
         this.dtsOut = this.name + '.d.ts';
         this.dtsBundleOut = this.dtsOut;
         this.tsSrc = [

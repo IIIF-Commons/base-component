@@ -29,7 +29,6 @@ interface Window {
 }
 
 declare var EventEmitter2: IEventEmitter2;
-declare var define: any;
 declare namespace Components {
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;
