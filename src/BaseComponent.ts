@@ -1,4 +1,4 @@
-declare var EventEmitter2: IEventEmitter2;
+declare var TinyEmitter: any;
 
 namespace Components {
     export class BaseComponent implements IBaseComponent {
@@ -48,7 +48,7 @@ namespace Components {
         });
     }
     
-    applyMixins(BaseComponent, [EventEmitter2]);
+    applyMixins(BaseComponent, [TinyEmitter]);
 }
 
 (function(w) {

@@ -42,7 +42,7 @@ var Components;
         });
     }
     Components.applyMixins = applyMixins;
-    applyMixins(BaseComponent, [EventEmitter2]);
+    applyMixins(BaseComponent, [TinyEmitter]);
 })(Components || (Components = {}));
 (function (w) {
     if (!w.Components) {

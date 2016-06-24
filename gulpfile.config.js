@@ -5,7 +5,7 @@ var GulpConfig = (function () {
     function GulpConfig() {
         this.name = metadata.name;
         this.deps = [
-            'node_modules/eventemitter2/lib/eventemitter2.js'
+            'node_modules/tiny-emitter/dist/tinyemitter.js'
         ];
         this.concatDeps = this.deps;
         this.testDeps = [];
