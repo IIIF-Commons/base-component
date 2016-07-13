@@ -1,6 +1,6 @@
 declare var TinyEmitter: any;
 
-namespace Components {
+namespace _Components {
     export class BaseComponent implements IBaseComponent {
         
         public options: IBaseComponentOptions;
@@ -53,6 +53,6 @@ namespace Components {
 
 (function(w) {
     if (!w._Components){
-        w._Components = Components;
+        w._Components = _Components;
     }
 })(window);
