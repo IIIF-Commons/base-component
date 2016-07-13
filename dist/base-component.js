@@ -45,8 +45,8 @@ var Components;
     applyMixins(BaseComponent, [TinyEmitter]);
 })(Components || (Components = {}));
 (function (w) {
-    if (!w.Components) {
-        w.Components = Components;
+    if (!w._Components) {
+        w._Components = Components;
     }
 })(window);
 
