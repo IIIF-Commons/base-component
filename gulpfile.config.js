@@ -4,39 +4,51 @@ var path = require('path');
 var GulpConfig = (function () {
     function GulpConfig() {
         this.name = metadata.name;
-        this.deps = [
-            'node_modules/tiny-emitter/dist/tinyemitter.js'
-        ];
-        this.concatDeps = this.deps;
-        this.testDeps = [];
-        this.typings = [];
-        this.typingsDir = './typings';
-        this.concatTypings = [path.join(this.typingsDir, '/eventemitter2.d.ts')];
-        this.dist = './dist';
         this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
-        this.jsOut = this.name + '.js';
-        this.jsMinOut = this.name + '.min.js';
-        this.jsBundleOut = this.name + '.bundle.js';
-        this.dtsOut = this.name + '.d.ts';
-        this.dtsBundleOut = this.dtsOut;
-        this.tsSrc = [
-            'src/_references.ts',
-            'src/*.ts',
-            'typings/*.ts',
-            'typings/**/*.ts'];
-        this.tsConfig = {
-            declarationFiles: true,
-            noExternalResolve: true,
-            noLib: false,
-            module: 'commonjs',
-            sortOutput: true
+        this.dependencies = {
+            // libs that MUST be included in a consuming app for this component to work
+            libs: [
+                'node_modules/tiny-emitter/dist/tinyemitter.js'
+            ],
+            // libs that MAY be included in a consuming app but are used here for example purposes
+            examples: [],
+            // ts definitions to copy to the typings dir
+            typings: []
         };
-        this.browserifyConfig = {
-            standalone: this.name,
-            debug: false
+        this.fileNames = {
+            jsOut: this.name + '.js',
+            jsMinOut: this.name + '.min.js',
+            jsBundleOut: this.name + '.bundle.js',
+            dtsOut: this.name + '.d.ts',
+            dtsBundleOut: this.name + '.d.ts'
         };
-        this.browserifySrc = this.dist;
-        this.browserifyTarget = this.dist;
+        this.directories = {
+            dist:'./dist',
+            typings:'./typings'
+        };
+        this.typescript = {
+            src: [
+                'src/_references.ts',
+                'src/*.ts',
+                'typings/*.ts',
+                'typings/**/*.ts'
+            ],
+            config: {
+                declarationFiles: true,
+                noExternalResolve: true,
+                noLib: false,
+                module: 'commonjs',
+                sortOutput: true
+            }
+        }
+        this.browserify = {
+            src: this.directories.dist,
+            target: this.directories.dist,
+            config: {
+                standalone: this.name,
+                debug: false
+            }
+        };
     }
     return GulpConfig;
 })();
