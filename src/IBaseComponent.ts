@@ -1,6 +1,6 @@
 namespace _Components {
     export interface IBaseComponent{
         options: IBaseComponentOptions;
-        databind(data: any): void;
+        databind(data?: any): void;
     }
 }

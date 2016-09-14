@@ -35,7 +35,8 @@ namespace _Components {
             
         }
 
-        public databind(data: any): void {
+        // todo: should the data param be removed? encourages using the options object instead
+        public databind(data?: any): void {
             
         }
     }
