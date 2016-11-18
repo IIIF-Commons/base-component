@@ -1,15 +1,16 @@
-declare var TinyEmitter: any;
+var Emitter = require('tiny-emitter');
+var TinyEmitter: any = new Emitter();
 
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
-        
+
         public options: IBaseComponentOptions;
         protected _$element: JQuery;
-        
+
         constructor(options: IBaseComponentOptions){
             this.options = $.extend(this._getDefaultOptions(), options);
         }
-        
+
         protected _init(): boolean{
             this._$element = $(this.options.element);
 
@@ -17,27 +18,27 @@ namespace _Components {
                 console.warn('element not found');
                 return false;
             }
-            
+
             this._$element.empty();
 
             return true;
         }
-        
+
         protected _getDefaultOptions(): IBaseComponentOptions {
             return <IBaseComponentOptions>{};
         }
-        
+
         protected _emit(event: string, ...args: any[]): void {
-            (<any>this).emit(event, args);
+            (<any>TinyEmitter).emit(event, args);
         }
-        
+
         protected _resize(): void {
-            
+
         }
 
         // todo: should the data param be removed? encourages using the options object instead
         public databind(data?: any): void {
-            
+
         }
     }
 
@@ -48,8 +49,8 @@ namespace _Components {
             });
         });
     }
-    
-    applyMixins(BaseComponent, [TinyEmitter]);
+
+    applyMixins(BaseComponent, []);
 }
 
 (function(w) {

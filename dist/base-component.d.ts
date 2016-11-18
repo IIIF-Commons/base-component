@@ -1,8 +1,9 @@
-// base-component v1.0.2 https://github.com/viewdir/base-component#readme
+// base-component v1.0.3 https://github.com/viewdir/base-component#readme
 interface Window {
     _Components: any;
 }
 
+declare var Emitter: any;
 declare var TinyEmitter: any;
 declare namespace _Components {
     class BaseComponent implements IBaseComponent {
