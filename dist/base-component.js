@@ -37,6 +37,7 @@ var _Components;
         return BaseComponent;
     }());
     _Components.BaseComponent = BaseComponent;
+    // use: applyMixins(BaseComponent, [myMixin]);
     function applyMixins(derivedCtor, baseCtors) {
         baseCtors.forEach(function (baseCtor) {
             Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
