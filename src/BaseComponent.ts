@@ -1,5 +1,4 @@
-var Emitter = require('tiny-emitter');
-var TinyEmitter: any = new Emitter();
+const { TinyEmitter } = require('tiny-emitter');
 
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
@@ -29,7 +28,7 @@ namespace _Components {
         }
 
         protected _emit(event: string, ...args: any[]): void {
-            (<any>TinyEmitter).emit(event, args);
+            TinyEmitter.emit(event, args);
         }
 
         protected _resize(): void {
@@ -50,11 +49,10 @@ namespace _Components {
         });
     }
 
-    applyMixins(BaseComponent, []);
 }
 
-(function(w) {
-    if (!w._Components){
-        w._Components = _Components;
+(function(g) {
+    if (!g._Components){
+        g._Components = _Components;
     }
-})(window);
+})(global);

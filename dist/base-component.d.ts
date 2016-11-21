@@ -3,8 +3,7 @@ interface Window {
     _Components: any;
 }
 
-declare var Emitter: any;
-declare var TinyEmitter: any;
+declare const TinyEmitter: any;
 declare namespace _Components {
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;
