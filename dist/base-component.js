@@ -3,7 +3,7 @@
 (function (global){
 
 
-var E = require('tiny-emitter').E;
+var TinyEmitter = require('tiny-emitter').TinyEmitter;
 var _Components;
 (function (_Components) {
     var BaseComponent = (function () {
@@ -22,21 +22,12 @@ var _Components;
         BaseComponent.prototype._getDefaultOptions = function () {
             return {};
         };
-        BaseComponent.prototype.on = function (event, callback, ctx) {
-            return E.on(event, callback, ctx);
-        };
-        BaseComponent.prototype.once = function (event, callback, ctx) {
-            return E.once(event, callback, ctx);
-        };
         BaseComponent.prototype._emit = function (event) {
             var args = [];
             for (var _i = 1; _i < arguments.length; _i++) {
                 args[_i - 1] = arguments[_i];
             }
-            return E.emit(event, args);
-        };
-        BaseComponent.prototype.off = function (event, callback) {
-            return E.off(event, callback);
+            return this.emit(event, args);
         };
         BaseComponent.prototype._resize = function () {
         };
@@ -46,7 +37,6 @@ var _Components;
         return BaseComponent;
     }());
     _Components.BaseComponent = BaseComponent;
-    // use: applyMixins(BaseComponent, [myMixin]);
     function applyMixins(derivedCtor, baseCtors) {
         baseCtors.forEach(function (baseCtor) {
             Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
@@ -55,6 +45,7 @@ var _Components;
         });
     }
     _Components.applyMixins = applyMixins;
+    applyMixins(BaseComponent, [TinyEmitter]);
 })(_Components || (_Components = {}));
 (function (g) {
     if (!g._Components) {

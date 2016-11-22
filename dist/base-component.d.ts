@@ -11,7 +11,7 @@ interface EventEmitter {
   off  (event: string, callback?: Function): EventEmitter;
 }
 
-declare const E: any;
+declare const TinyEmitter: any;
 declare namespace _Components {
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;
@@ -19,10 +19,7 @@ declare namespace _Components {
         constructor(options: IBaseComponentOptions);
         protected _init(): boolean;
         protected _getDefaultOptions(): IBaseComponentOptions;
-        on(event: string, callback: Function, ctx?: any): EventEmitter;
-        once(event: string, callback: Function, ctx?: any): EventEmitter;
-        protected _emit(event: string, ...args: any[]): EventEmitter;
-        off(event: string, callback?: Function): EventEmitter;
+        _emit(event: string, ...args: any[]): EventEmitter;
         protected _resize(): void;
         databind(data?: any): void;
     }

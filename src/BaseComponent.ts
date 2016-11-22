@@ -1,4 +1,4 @@
-const { E } = require('tiny-emitter');
+const { TinyEmitter } = require('tiny-emitter');
 
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
@@ -27,20 +27,8 @@ namespace _Components {
             return <IBaseComponentOptions>{};
         }
 
-        public on(event: string, callback: Function, ctx?: any): EventEmitter {
-            return E.on(event, callback, ctx);
-        }
-
-        public once(event: string, callback: Function, ctx?: any): EventEmitter {
-            return E.once(event, callback, ctx);
-        }
-
-        protected _emit(event: string, ...args: any[]): EventEmitter {
-            return E.emit(event, args);
-        }
-
-        public off(event: string, callback?: Function): EventEmitter {
-            return E.off(event, callback);
+        public _emit(event: string, ...args: any[]): EventEmitter {
+            return (<any>this).emit(event, args);
         }
 
         protected _resize(): void {
@@ -53,7 +41,6 @@ namespace _Components {
         }
     }
 
-    // use: applyMixins(BaseComponent, [myMixin]);
     export function applyMixins(derivedCtor: any, baseCtors: any[]) {
         baseCtors.forEach(baseCtor => {
             Object.getOwnPropertyNames(baseCtor.prototype).forEach(name => {
@@ -62,6 +49,7 @@ namespace _Components {
         });
     }
 
+    applyMixins(BaseComponent, [TinyEmitter]);
 }
 
 (function(g) {
