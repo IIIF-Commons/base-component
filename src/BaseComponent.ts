@@ -1,17 +1,19 @@
 const { TinyEmitter } = require('tiny-emitter');
 
+type EventEmitter = any; // https://github.com/scottcorgan/tiny-emitter/pull/14
+
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
 
         public options: IBaseComponentOptions;
         protected _$element: JQuery;
 
-        constructor(options: IBaseComponentOptions){
+        constructor(options: IBaseComponentOptions) {
             this.options = $.extend(this._getDefaultOptions(), options);
         }
 
-        protected _init(): boolean{
-            this._$element = $(this.options.element);
+        protected _init(): boolean {
+                this._$element = $(this.options.element);
 
             if (!this._$element.length){
                 console.warn('element not found');
@@ -27,8 +29,20 @@ namespace _Components {
             return <IBaseComponentOptions>{};
         }
 
-        protected _emit(event: string, ...args: any[]): void {
-            TinyEmitter.emit(event, args);
+        protected _on(event: string, callback: Function, ctx?: any): EventEmitter {
+            return TinyEmitter.on(event, callback, ctx);
+        }
+
+        protected _once(event: string, callback: Function, ctx?: any): EventEmitter {
+            return TinyEmitter.once(event, callback, ctx);
+        }
+
+        protected _emit(event: string, ...args: any[]): EventEmitter {
+            return TinyEmitter.emit(event, args);
+        }
+
+        protected _off(event: string, callback?: Function): EventEmitter {
+            return TinyEmitter.on(event, callback);
         }
 
         protected _resize(): void {
