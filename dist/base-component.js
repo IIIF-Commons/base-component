@@ -22,10 +22,10 @@ var _Components;
         BaseComponent.prototype._getDefaultOptions = function () {
             return {};
         };
-        BaseComponent.prototype._on = function (event, callback, ctx) {
+        BaseComponent.prototype.on = function (event, callback, ctx) {
             return TinyEmitter.on(event, callback, ctx);
         };
-        BaseComponent.prototype._once = function (event, callback, ctx) {
+        BaseComponent.prototype.once = function (event, callback, ctx) {
             return TinyEmitter.once(event, callback, ctx);
         };
         BaseComponent.prototype._emit = function (event) {
@@ -35,8 +35,8 @@ var _Components;
             }
             return TinyEmitter.emit(event, args);
         };
-        BaseComponent.prototype._off = function (event, callback) {
-            return TinyEmitter.on(event, callback);
+        BaseComponent.prototype.off = function (event, callback) {
+            return TinyEmitter.off(event, callback);
         };
         BaseComponent.prototype._resize = function () {
         };

@@ -27,11 +27,11 @@ namespace _Components {
             return <IBaseComponentOptions>{};
         }
 
-        protected _on(event: string, callback: Function, ctx?: any): EventEmitter {
+        public on(event: string, callback: Function, ctx?: any): EventEmitter {
             return TinyEmitter.on(event, callback, ctx);
         }
 
-        protected _once(event: string, callback: Function, ctx?: any): EventEmitter {
+        public once(event: string, callback: Function, ctx?: any): EventEmitter {
             return TinyEmitter.once(event, callback, ctx);
         }
 
@@ -39,8 +39,8 @@ namespace _Components {
             return TinyEmitter.emit(event, args);
         }
 
-        protected _off(event: string, callback?: Function): EventEmitter {
-            return TinyEmitter.on(event, callback);
+        public off(event: string, callback?: Function): EventEmitter {
+            return TinyEmitter.off(event, callback);
         }
 
         protected _resize(): void {

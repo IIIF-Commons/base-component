@@ -19,10 +19,10 @@ declare namespace _Components {
         constructor(options: IBaseComponentOptions);
         protected _init(): boolean;
         protected _getDefaultOptions(): IBaseComponentOptions;
-        protected _on(event: string, callback: Function, ctx?: any): EventEmitter;
-        protected _once(event: string, callback: Function, ctx?: any): EventEmitter;
+        on(event: string, callback: Function, ctx?: any): EventEmitter;
+        once(event: string, callback: Function, ctx?: any): EventEmitter;
         protected _emit(event: string, ...args: any[]): EventEmitter;
-        protected _off(event: string, callback?: Function): EventEmitter;
+        off(event: string, callback?: Function): EventEmitter;
         protected _resize(): void;
         databind(data?: any): void;
     }
