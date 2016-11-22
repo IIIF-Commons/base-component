@@ -3,7 +3,7 @@
 (function (global){
 
 
-var TinyEmitter = require('tiny-emitter').TinyEmitter;
+var E = require('tiny-emitter').E;
 var _Components;
 (function (_Components) {
     var BaseComponent = (function () {
@@ -23,20 +23,20 @@ var _Components;
             return {};
         };
         BaseComponent.prototype.on = function (event, callback, ctx) {
-            return TinyEmitter.on(event, callback, ctx);
+            return E.on(event, callback, ctx);
         };
         BaseComponent.prototype.once = function (event, callback, ctx) {
-            return TinyEmitter.once(event, callback, ctx);
+            return E.once(event, callback, ctx);
         };
         BaseComponent.prototype._emit = function (event) {
             var args = [];
             for (var _i = 1; _i < arguments.length; _i++) {
                 args[_i - 1] = arguments[_i];
             }
-            return TinyEmitter.emit(event, args);
+            return E.emit(event, args);
         };
         BaseComponent.prototype.off = function (event, callback) {
-            return TinyEmitter.off(event, callback);
+            return E.off(event, callback);
         };
         BaseComponent.prototype._resize = function () {
         };

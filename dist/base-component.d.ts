@@ -11,7 +11,7 @@ interface EventEmitter {
   off  (event: string, callback?: Function): EventEmitter;
 }
 
-declare const TinyEmitter: any;
+declare const E: any;
 declare namespace _Components {
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;

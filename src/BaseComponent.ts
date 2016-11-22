@@ -1,4 +1,4 @@
-const { TinyEmitter } = require('tiny-emitter');
+const { E } = require('tiny-emitter');
 
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
@@ -28,19 +28,19 @@ namespace _Components {
         }
 
         public on(event: string, callback: Function, ctx?: any): EventEmitter {
-            return TinyEmitter.on(event, callback, ctx);
+            return E.on(event, callback, ctx);
         }
 
         public once(event: string, callback: Function, ctx?: any): EventEmitter {
-            return TinyEmitter.once(event, callback, ctx);
+            return E.once(event, callback, ctx);
         }
 
         protected _emit(event: string, ...args: any[]): EventEmitter {
-            return TinyEmitter.emit(event, args);
+            return E.emit(event, args);
         }
 
         public off(event: string, callback?: Function): EventEmitter {
-            return TinyEmitter.off(event, callback);
+            return E.off(event, callback);
         }
 
         protected _resize(): void {
