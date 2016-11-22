@@ -1,7 +1,5 @@
 const { TinyEmitter } = require('tiny-emitter');
 
-type EventEmitter = any; // https://github.com/scottcorgan/tiny-emitter/pull/14
-
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
 

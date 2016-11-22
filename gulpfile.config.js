@@ -14,7 +14,8 @@ var GulpConfig = (function () {
             examples: [],
             // ts definitions to copy to the typings dir
             typings: [
-                'node_modules/tiny-emitter/index.d.ts'
+                // https://github.com/scottcorgan/tiny-emitter/pull/14
+                //'node_modules/tiny-emitter/index.d.ts'
             ]
         };
         this.fileNames = {
