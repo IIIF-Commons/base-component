@@ -1,4 +1,4 @@
-const { TinyEmitter } = require('tiny-emitter');
+declare var TinyEmitter: any;
 
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
