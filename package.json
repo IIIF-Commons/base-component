@@ -18,7 +18,7 @@
   "homepage": "https://github.com/viewdir/base-component#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-tasks": "viewdir/gulp-tasks"
+    "gulp-tasks": "viewdir/gulp-tasks#v1.0.2"
   },
   "dependencies": {
     "tiny-emitter": "^1.0.2"
