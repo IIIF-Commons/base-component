@@ -13,10 +13,7 @@ var GulpConfig = (function () {
             // libs that MAY be included in a consuming app but are used here for example purposes
             examples: [],
             // ts definitions to copy to the typings dir
-            typings: [
-                // https://github.com/scottcorgan/tiny-emitter/pull/14
-                //'node_modules/tiny-emitter/index.d.ts'
-            ]
+            typings: []
         };
         this.fileNames = {
             jsOut: this.name + '.js',
