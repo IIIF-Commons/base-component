@@ -1,4 +1,3 @@
-// base-component v1.0.6 https://github.com/viewdir/base-component#readme
 
 declare var TinyEmitter: any;
 declare namespace _Components {
