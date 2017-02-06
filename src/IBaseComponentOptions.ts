@@ -1,5 +1,6 @@
 namespace _Components{
     export interface IBaseComponentOptions {
-        element?: string;
+        target: HTMLElement;
+        data?: any;
     }
 }

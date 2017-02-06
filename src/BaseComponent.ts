@@ -7,11 +7,12 @@ namespace _Components {
         protected _$element: JQuery;
 
         constructor(options: IBaseComponentOptions) {
-            this.options = $.extend(this._getDefaultOptions(), options);
+            this.options = options;
+            this.options.data = $.extend(this.data(), options.data);
         }
 
         protected _init(): boolean {
-                this._$element = $(this.options.element);
+            this._$element = $(this.options.target);
 
             if (!this._$element.length){
                 console.warn('element not found');
@@ -23,8 +24,8 @@ namespace _Components {
             return true;
         }
 
-        protected _getDefaultOptions(): IBaseComponentOptions {
-            return <IBaseComponentOptions>{};
+        public data(): Object {
+            return {};
         }
 
         public _emit(event: string, ...args: any[]): EventEmitter {
@@ -35,8 +36,7 @@ namespace _Components {
 
         }
 
-        // todo: should the data param be removed? encourages using the options object instead
-        public databind(data?: any): void {
+        public set(data: Object): void {
 
         }
     }
@@ -52,7 +52,7 @@ namespace _Components {
     applyMixins(BaseComponent, [TinyEmitter]);
 }
 
-(function(g) {
+(function(g: any) {
     if (!g._Components){
         g._Components = _Components;
     }

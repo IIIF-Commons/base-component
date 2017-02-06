@@ -9,11 +9,5 @@ tasks.init({
         'node_modules/tiny-emitter/dist/tinyemitter.js'
     ],
     // libs that MAY be included in a consuming app but are used here for example purposes
-    examples: [],
-    // ts definitions to copy to the 'typings' dir
-    typings: [
-        'typings/corejs.d.ts',
-        'typings/jquery.d.ts',
-        'typings/node.d.ts'
-    ]
+    examples: []
 });
