@@ -1,4 +1,5 @@
 {
+  "name": "base-component",
   "globalDependencies": {
     "core-js": "registry:dt/core-js#0.9.7+20161130133742",
     "jquery": "registry:dt/jquery#1.10.0+20170123093700",
