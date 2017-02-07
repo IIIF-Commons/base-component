@@ -14,7 +14,7 @@ namespace _Components {
         protected _init(): boolean {
             this._$element = $(this.options.target);
 
-            if (!this._$element.length){
+            if (!this._$element.length) {
                 console.warn('element not found');
                 return false;
             }
@@ -28,7 +28,7 @@ namespace _Components {
             return {};
         }
 
-        public _emit(event: string, ...args: any[]): EventEmitter {
+        public fire(event: string, ...args: any[]): EventEmitter {
             return (<any>this).emit(event, args);
         }
 

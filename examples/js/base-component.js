@@ -21,7 +21,7 @@ var _Components;
         BaseComponent.prototype.data = function () {
             return {};
         };
-        BaseComponent.prototype._emit = function (event) {
+        BaseComponent.prototype.fire = function (event) {
             var args = [];
             for (var _i = 1; _i < arguments.length; _i++) {
                 args[_i - 1] = arguments[_i];

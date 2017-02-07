@@ -17,7 +17,7 @@ declare namespace _Components {
         constructor(options: IBaseComponentOptions);
         protected _init(): boolean;
         data(): Object;
-        _emit(event: string, ...args: any[]): EventEmitter;
+        fire(event: string, ...args: any[]): EventEmitter;
         protected _resize(): void;
         set(data: Object): void;
     }
@@ -26,9 +26,10 @@ declare namespace _Components {
 
 declare namespace _Components {
     interface IBaseComponent {
+        data(): Object;
+        fire(event: string, ...args: any[]): EventEmitter;
         options: IBaseComponentOptions;
         set(data: Object): void;
-        data(): Object;
     }
 }
 
