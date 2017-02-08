@@ -1,4 +1,4 @@
-// base-component v1.0.8 https://github.com/viewdir/base-component#readme
+// base-component v1.0.9 https://github.com/viewdir/base-component#readme
 interface Window {
     _Components: any;
 }
