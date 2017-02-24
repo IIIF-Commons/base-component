@@ -1,5 +1,3 @@
-declare var TinyEmitter: any;
-
 namespace _Components {
     export class BaseComponent implements IBaseComponent {
 

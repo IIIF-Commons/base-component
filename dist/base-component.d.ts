@@ -5,7 +5,6 @@ interface Window {
 }
 
 /// <reference types="jquery" />
-declare var TinyEmitter: any;
 declare namespace _Components {
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;
