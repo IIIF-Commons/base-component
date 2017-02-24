@@ -38,7 +38,7 @@ namespace _Components {
             });
         }
 
-        public fire(name: string): void {
+        public fire(name: string, ...args: any[]): void {
             var data = [].slice.call(arguments, 1);
             var evtArr = ((this._e || (this._e = {}))[name] || []).slice();
             var i = 0;

@@ -15,11 +15,10 @@ declare namespace _Components {
         protected _init(): boolean;
         data(): Object;
         on(name: string, callback: Function, ctx: any): void;
-        fire(name: string): void;
+        fire(name: string, ...args: any[]): void;
         protected _resize(): void;
         set(data: Object): void;
     }
-    function applyMixins(derivedCtor: any, baseCtors: any[]): void;
 }
 
 declare namespace _Components {

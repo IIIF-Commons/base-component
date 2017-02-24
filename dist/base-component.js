@@ -30,6 +30,10 @@ var _Components;
             });
         };
         BaseComponent.prototype.fire = function (name) {
+            var args = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                args[_i - 1] = arguments[_i];
+            }
             var data = [].slice.call(arguments, 1);
             var evtArr = ((this._e || (this._e = {}))[name] || []).slice();
             var i = 0;
@@ -45,15 +49,6 @@ var _Components;
         return BaseComponent;
     }());
     _Components.BaseComponent = BaseComponent;
-    function applyMixins(derivedCtor, baseCtors) {
-        baseCtors.forEach(function (baseCtor) {
-            Object.getOwnPropertyNames(baseCtor.prototype).forEach(function (name) {
-                derivedCtor.prototype[name] = baseCtor.prototype[name];
-            });
-        });
-    }
-    _Components.applyMixins = applyMixins;
-    applyMixins(BaseComponent, [TinyEmitter]);
 })(_Components || (_Components = {}));
 (function (g) {
     if (!g._Components) {
