@@ -18,10 +18,10 @@
   "homepage": "https://github.com/viewdir/base-component#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-tasks": "viewdir/gulp-tasks#v1.0.5",
-    "typings": "^2.1.0"
+    "gulp-tasks": "viewdir/gulp-tasks#v1.0.5"
   },
   "dependencies": {
-    "tiny-emitter": "^1.0.2"
+    "@types/jquery": "^2.0.40",
+    "@types/node": "^7.0.5"
   }
 }

@@ -5,6 +5,7 @@ namespace _Components {
 
         public options: IBaseComponentOptions;
         protected _$element: JQuery;
+        private _e: any;
 
         constructor(options: IBaseComponentOptions) {
             this.options = options;
@@ -28,8 +29,24 @@ namespace _Components {
             return {};
         }
 
-        public fire(event: string, ...args: any[]): EventEmitter {
-            return (<any>this).emit(event, args);
+        public on(name: string, callback: Function, ctx: any): void {
+            var e = this._e || (this._e = {});
+
+            (e[name] || (e[name] = [])).push({
+                fn: callback,
+                ctx: ctx
+            });
+        }
+
+        public fire(name: string): void {
+            var data = [].slice.call(arguments, 1);
+            var evtArr = ((this._e || (this._e = {}))[name] || []).slice();
+            var i = 0;
+            var len = evtArr.length;
+
+            for (i; i < len; i++) {
+                evtArr[i].fn.apply(evtArr[i].ctx, data);
+            }
         }
 
         protected _resize(): void {

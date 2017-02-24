@@ -1,7 +1,8 @@
 namespace _Components {
     export interface IBaseComponent {
         data(): Object;
-        fire(event: string, ...args: any[]): EventEmitter;
+        on(name: string, callback: Function, ctx: any): void;
+        fire(name: string, ...args: any[]): void;
         options: IBaseComponentOptions;
         set(data: Object): void;
     }
