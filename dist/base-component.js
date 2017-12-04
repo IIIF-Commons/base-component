@@ -5,7 +5,7 @@
 
 var _Components;
 (function (_Components) {
-    var BaseComponent = (function () {
+    var BaseComponent = /** @class */ (function () {
         function BaseComponent(options) {
             this.options = options;
             this.options.data = $.extend(this.data(), options.data);
