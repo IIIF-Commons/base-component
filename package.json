@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/viewdir/base-component.git"
   },
-  "author": "Edward Silverton <ed@edsilv.com> (http://edsilv.com)",
+  "author": "@edsilv",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/viewdir/base-component/issues"
