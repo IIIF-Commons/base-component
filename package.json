@@ -7,14 +7,14 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/viewdir/base-component.git"
+    "url": "git+https://github.com/iiif-commons/base-component.git"
   },
   "author": "@edsilv",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/viewdir/base-component/issues"
+    "url": "https://github.com/iiif-commons/base-component/issues"
   },
-  "homepage": "https://github.com/viewdir/base-component#readme",
+  "homepage": "https://github.com/iiif-commons/base-component#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
