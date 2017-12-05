@@ -1,5 +1,4 @@
-// base-component v1.1.0 https://github.com/viewdir/base-component#readme
-/// <reference path="../node_modules/typescript/lib/lib.es6.d.ts" />
+// base-component v1.1.1 https://github.com/iiif-commons/base-component#readme
 interface Window {
     _Components: any;
 }
