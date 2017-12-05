@@ -1,4 +1,4 @@
-// base-component v1.1.1 https://github.com/iiif-commons/base-component#readme
+// base-component v1.1.2 https://github.com/iiif-commons/base-component#readme
 interface Window {
     _Components: any;
 }
