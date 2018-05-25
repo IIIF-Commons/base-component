@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "types": "./dist/base-component.d.ts",
-  "scripts": {},
+  "scripts": {
+    "test": "node_modules/.bin/jest"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/iiif-commons/base-component.git"
@@ -16,11 +18,37 @@
   },
   "homepage": "https://github.com/iiif-commons/base-component#readme",
   "devDependencies": {
+    "@types/jest": "^22.2.3",
     "gulp": "^3.9.1",
-    "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7"
+    "gulp-tasks": "iiif-commons/gulp-tasks#v1.0.7",
+    "jest": "^23.0.0",
+    "ts-jest": "^22.4.6"
   },
   "dependencies": {
-    "@types/jquery": "^2.0.40",
-    "@types/node": "^7.0.5"
+    "@types/jquery": "^2.0.49",
+    "@types/node": "^7.0.65",
+    "typescript": "^2.8.3"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": false
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
