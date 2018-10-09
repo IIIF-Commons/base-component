@@ -49,4 +49,4 @@ var _Components;
     if (!g._Components) {
         g._Components = _Components;
     }
-})(global);
+})(window);

@@ -79,4 +79,4 @@ interface Window {
     if (!g._Components){
         g._Components = _Components;
     }
-})(global);
+})(window);
