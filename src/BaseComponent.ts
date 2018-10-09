@@ -57,6 +57,10 @@ namespace _Components {
     }
 }
 
+interface Window {
+    _Components: any;
+}
+
 (function(g: any) {
     if (!g._Components){
         g._Components = _Components;
