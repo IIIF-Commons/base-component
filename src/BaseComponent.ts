@@ -1,4 +1,18 @@
 namespace _Components {
+
+    export interface IBaseComponent {
+        data(): Object;
+        on(name: string, callback: Function, ctx: any): void;
+        fire(name: string, ...args: any[]): void;
+        options: IBaseComponentOptions;
+        set(data: Object): void;
+    }
+    
+    export interface IBaseComponentOptions {
+        target: HTMLElement;
+        data?: any;
+    }
+
     export class BaseComponent implements IBaseComponent {
 
         public options: IBaseComponentOptions;
@@ -59,19 +73,6 @@ namespace _Components {
 
 interface Window {
     _Components: any;
-}
-
-interface IBaseComponent {
-    data(): Object;
-    on(name: string, callback: Function, ctx: any): void;
-    fire(name: string, ...args: any[]): void;
-    options: IBaseComponentOptions;
-    set(data: Object): void;
-}
-
-interface IBaseComponentOptions {
-    target: HTMLElement;
-    data?: any;
 }
 
 (function(g: any) {

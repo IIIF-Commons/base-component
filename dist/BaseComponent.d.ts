@@ -1,5 +1,16 @@
 /// <reference types="jquery" />
 declare namespace _Components {
+    interface IBaseComponent {
+        data(): Object;
+        on(name: string, callback: Function, ctx: any): void;
+        fire(name: string, ...args: any[]): void;
+        options: IBaseComponentOptions;
+        set(data: Object): void;
+    }
+    interface IBaseComponentOptions {
+        target: HTMLElement;
+        data?: any;
+    }
     class BaseComponent implements IBaseComponent {
         options: IBaseComponentOptions;
         protected _$element: JQuery;
@@ -15,15 +26,4 @@ declare namespace _Components {
 }
 interface Window {
     _Components: any;
-}
-interface IBaseComponent {
-    data(): Object;
-    on(name: string, callback: Function, ctx: any): void;
-    fire(name: string, ...args: any[]): void;
-    options: IBaseComponentOptions;
-    set(data: Object): void;
-}
-interface IBaseComponentOptions {
-    target: HTMLElement;
-    data?: any;
 }
