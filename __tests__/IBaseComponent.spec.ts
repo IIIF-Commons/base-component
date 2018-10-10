@@ -1,4 +1,4 @@
-import '../src/IBaseComponent';
+import '../src/BaseComponent';
 
 describe('IBaseComponent', () => {
 
