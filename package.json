@@ -1,15 +1,15 @@
 {
   "name": "@iiif/base-component",
-  "version": "1.1.4",
+  "version": "2.0.0-pre.1",
   "description": "",
-  "main": "./dist/BaseComponent.js",
-  "types": "./dist/BaseComponent.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "test": "npx jest",
-    "clean": "npx rimraf ./dist",
-    "build-ts": "npx tsc",
-    "minify-js": "npx uglify-js ./dist/BaseComponent.js > ./dist/BaseComponent.min.js",
-    "build": "npm run clean && npm run build-ts && npm run minify-js"
+    "test": "jest",
+    "clean": "rimraf ./dist",
+    "build:esmodule": "tsc",
+    "build": "npm run clean && npm run build:esmodule",
+    "prepare": "npm run build && npm run test"
   },
   "repository": {
     "type": "git",

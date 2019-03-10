@@ -11,7 +11,8 @@
         "noUnusedParameters": false,
         "strictNullChecks": true,
         "lib": ["es6", "dom"],
-        "outDir": "./dist/"
+        "outDir": "./dist/",
+        "target": "es6"
     },
     "include": [
         "src/**/*"

@@ -1,8 +1,8 @@
 // _Constructor is set within the file itself, hence nothing is imported
-import '../src/BaseComponent';
+import { IBaseComponentOptions, BaseComponent } from '../src';
 
 describe('ExtendedBaseComponent', () => {
-  class ExtendedBaseComponent extends _Components.BaseComponent {
+  class ExtendedBaseComponent extends BaseComponent {
 
     constructor(options: IBaseComponentOptions) {
       this.options = options;
@@ -66,7 +66,7 @@ describe('BaseComponent', () => {
   const MockOptions = jest.fn<IBaseComponentOptions>();
 
   const options = new MockOptions();
-  const component = new _Components.BaseComponent(options);
+  const component = new BaseComponent(options);
   describe('constructor', () => {
 
     it('constructs an object using options', () => {
