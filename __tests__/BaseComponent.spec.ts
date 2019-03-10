@@ -1,10 +1,10 @@
-// _Constructor is set within the file itself, hence nothing is imported
 import { IBaseComponentOptions, BaseComponent } from '../src';
 
 describe('ExtendedBaseComponent', () => {
   class ExtendedBaseComponent extends BaseComponent {
 
     constructor(options: IBaseComponentOptions) {
+      super(options);
       this.options = options;
     }
 

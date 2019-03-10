@@ -12,7 +12,7 @@ export class BaseComponent {
 
     constructor(options: IBaseComponentOptions) {
         this.options = options;
-        this.options.data = $.extend(this.data(), options.data);
+        this.options.data = Object.assign({}, this.data(), options.data);
     }
 
     protected _init(): boolean {
