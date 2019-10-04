@@ -1,6 +1,6 @@
 {
   "name": "@iiif/base-component",
-  "version": "2.0.0-pre.2",
+  "version": "2.0.0-pre.3",
   "description": "",
   "main": "./dist-umd/basecomponent.js",
   "module": "./dist-esmodule/index.js",
@@ -42,7 +42,7 @@
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
-    "@types/node": "^7.0.65"
+    "@types/node": "8.10.52"
   },
   "jest": {
     "globals": {
