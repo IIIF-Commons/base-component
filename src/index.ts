@@ -1,4 +1,3 @@
-
 export interface IBaseComponentOptions {
     target: HTMLElement;
     data?: any;
@@ -7,7 +6,7 @@ export interface IBaseComponentOptions {
 export class BaseComponent {
 
     public options: IBaseComponentOptions;
-    protected _$element: JQuery;
+    protected _el: HTMLElement;
     private _e: any;
 
     constructor(options: IBaseComponentOptions) {
@@ -16,14 +15,14 @@ export class BaseComponent {
     }
 
     protected _init(): boolean {
-        this._$element = $(this.options.target);
+        this._el = this.options.target;
 
-        if (!this._$element.length) {
+        if (!this._el) {
             console.warn('element not found');
             return false;
         }
 
-        this._$element.empty();
+        this._el.innerHTML = '';
 
         return true;
     }
@@ -56,7 +55,7 @@ export class BaseComponent {
 
     }
 
-    public set(data: Object): void {
+    public set(_data: Object): void {
 
     }
 }

@@ -1,18 +1,26 @@
 {
     "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
         "declaration": true,
-        "declarationDir": "./dist",
-        "noImplicitAny": true,
+        "forceConsistentCasingInFileNames": true,
+        "jsx": "react",
+        "lib": [ "es2015", "dom" ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": false,
         "noImplicitReturns": true,
         "noImplicitThis": true,
-        "module": "es6",
-        "moduleResolution": "node",
         "noUnusedLocals": true,
         "noUnusedParameters": false,
+        "outDir": "dist-commonjs",
+        "skipLibCheck": true,
+        "sourceMap": true,
         "strictNullChecks": true,
-        "lib": ["es6", "dom"],
-        "outDir": "./dist/",
-        "target": "es3"
+        "suppressImplicitAnyIndexErrors": true,
+        "target": "es5",
+        "types": [
+            "node"
+        ]
     },
     "include": [
         "src/**/*"
