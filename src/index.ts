@@ -6,7 +6,7 @@ export interface IBaseComponentOptions {
 export class BaseComponent {
 
     public options: IBaseComponentOptions;
-    protected _el: HTMLElement;
+    public el: HTMLElement;
     private _e: any;
 
     constructor(options: IBaseComponentOptions) {
@@ -15,14 +15,14 @@ export class BaseComponent {
     }
 
     protected _init(): boolean {
-        this._el = this.options.target;
+        this.el = this.options.target;
 
-        if (!this._el) {
+        if (!this.el) {
             console.warn('element not found');
             return false;
         }
 
-        this._el.innerHTML = '';
+        this.el.innerHTML = '';
 
         return true;
     }
