@@ -14,7 +14,7 @@ export class BaseComponent {
         this.options.data = Object.assign({}, this.data(), options.data);
     }
 
-    protected async _init(): Promise<boolean> {
+    protected _init(): boolean {
         this._el = this.options.target;
 
         if (!this._el) {

@@ -17,7 +17,7 @@ describe('ExtendedBaseComponent', () => {
     }
   }
 
-  describe('#_init', () => {
+  describe('#_init', async () => {
 
     const options =  {
       target: undefined,
