@@ -1,6 +1,6 @@
 {
   "name": "@iiif/base-component",
-  "version": "2.0.0-pre.5",
+  "version": "2.0.0",
   "description": "",
   "main": "./dist-umd/basecomponent.js",
   "module": "./dist-esmodule/index.js",
